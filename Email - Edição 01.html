@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IntellTech · Slope Stability 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#07211e;
+    --petrol:#0a2e2a;
+    --glow:#2fbfa6;
+    --amber:#e0913f;
+    --mute:rgba(255,255,255,.66);
+    --mute-2:rgba(255,255,255,.38);
+    --line:rgba(255,255,255,.11);
+    --line-2:rgba(255,255,255,.06);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:#c8cecc;
+    font-family:'Albert Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:48px 24px 72px;
+    min-height:100vh;
+  }
+
+  /* ---- wrapper ---- */
+  .email{
+    width:600px;
+    background:var(--ink);
+    color:#fff;
+    font-family:'Albert Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 40px 80px -24px rgba(4,18,16,.7), 0 2px 8px rgba(0,0,0,.18);
+  }
+  .email a{text-decoration:none;}
+
+  /* ---- preheader ---- */
+  .preheader{display:none;visibility:hidden;opacity:0;height:0;width:0;overflow:hidden;max-height:0;overflow:hidden;}
+
+  /* ---- header ---- */
+  .ehead{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 44px;
+    border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,0));
+  }
+  .ehead img.slope{height:28px;display:block;}
+  .ehead img.itt{height:18px;display:block;opacity:.92;}
+  .ehead .vr{width:1px;height:24px;background:var(--line);}
+
+  /* ---- hero ---- */
+  .hero{
+    padding:52px 44px 56px;
+    background:
+      radial-gradient(130% 65% at 50% 138%, rgba(224,145,63,.30) 0%, rgba(224,145,63,0) 54%),
+      linear-gradient(180deg,#0c2522 0%,#07211e 100%);
+    position:relative;
+  }
+  .eyebrow{
+    font-family:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight:700;font-size:10.5px;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--glow);margin:0;
+  }
+  .hero-title{
+    font-family:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight:900;font-size:64px;letter-spacing:-.03em;line-height:.88;
+    color:#fff;margin:20px 0 0;text-wrap:balance;
+  }
+  .hero-title .yr{color:#fff;}
+  .hero-divider{
+    width:36px;height:3px;background:var(--amber);border-radius:2px;
+    margin:28px 0;
+  }
+  .hero-lead{
+    font-size:15.5px;line-height:1.70;color:var(--mute);
+    max-width:420px;margin:0;
+  }
+  .hero-lead em{font-style:normal;color:rgba(255,255,255,.88);}
+
+  /* ---- body section ---- */
+  .sect{
+    padding:40px 44px 44px;
+    border-top:1px solid var(--line-2);
+  }
+  .sect-eyebrow{margin:0 0 14px;}
+  .sect-title{
+    font-family:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight:700;font-size:22px;letter-spacing:-.015em;line-height:1.18;
+    color:#fff;margin:0 0 16px;
+  }
+  .sect-body{
+    font-size:15px;line-height:1.70;color:var(--mute);margin:0;
+  }
+  .sect-body + .sect-body{margin-top:14px;}
+
+  /* ---- facts strip ---- */
+  .facts{
+    display:flex;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .fact{flex:1;padding:22px 28px;border-right:1px solid var(--line);}
+  .fact:last-child{border-right:none;}
+  .fact .k{
+    font-family:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--mute-2);margin:0 0 8px;
+  }
+  .fact .v{
+    font-family:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight:700;font-size:15px;color:#fff;margin:0;line-height:1.2;
+  }
+  .fact .v small{
+    display:block;
+    font-family:'Albert Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight:400;font-size:12.5px;color:var(--mute);margin-top:4px;
+  }
+
+  /* ---- CTA band ---- */
+  .cta{
+    padding:48px 44px 52px;
+    border-top:1px solid var(--line-2);
+    background:
+      radial-gradient(110% 60% at 50% 125%, rgba(47,191,166,.24) 0%, rgba(47,191,166,0) 55%),
+      linear-gradient(180deg,#081c19 0%,#07211e 100%);
+  }
+  .cta-nos{
+    font-family:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight:800;font-size:30px;letter-spacing:-.02em;color:#fff;
+    margin:0 0 16px;
+  }
+  .cta-body{
+    font-size:15px;line-height:1.68;color:var(--mute);
+    max-width:420px;margin:0 0 28px;
+  }
+  .btn{
+    display:inline-block;
+    font-family:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight:700;font-size:13.5px;letter-spacing:.01em;
+    padding:14px 26px;border-radius:9px;
+  }
+  .btn-amber{background:var(--amber);color:#1f1006;}
+  .btn .arr{margin-left:8px;opacity:.8;}
+
+  /* ---- footer ---- */
+  .foot{
+    padding:30px 44px 38px;
+    background:#041613;
+    border-top:1px solid var(--line);
+  }
+  .foot img{height:16px;opacity:.85;margin-bottom:16px;display:block;}
+  .foot p{
+    font-size:11.5px;line-height:1.62;color:rgba(255,255,255,.34);
+    margin:0 0 12px;max-width:420px;
+  }
+  .foot .links{display:flex;gap:18px;flex-wrap:wrap;margin:0 0 14px;}
+  .foot .links a{
+    font-size:11.5px;
+    font-family:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight:600;color:rgba(255,255,255,.44);letter-spacing:.02em;
+  }
+  .foot .copy{font-size:10.5px;color:rgba(255,255,255,.22);margin:0;}
+</style>
+</head>
+<body>
+
+<div class="email">
+
+  <span class="preheader">A Intelltech estará em Lima como patrocinadora estratégica do Slope Stability 2026 — 26 a 29 de outubro, Lima Convention Center.</span>
+
+  <!-- header -->
+  <div class="ehead">
+    <img class="slope" src="assets/slope-logo.png" alt="Slope Stability 2026">
+    <span class="vr"></span>
+    <img class="itt" src="assets/intelltech-logo.png" alt="IntellTech">
+  </div>
+
+  <!-- hero -->
+  <div class="hero">
+    <p class="eyebrow">26–29 de outubro · Lima, Perú</p>
+    <h1 class="hero-title">Slope<br>Stability<br><span class="yr">2026</span></h1>
+    <div class="hero-divider"></div>
+    <p class="hero-lead">O Slope Stability acontece a cada dois anos. É o momento em que a geotecnia global se encontra para discutir o que importa — <em>os dados, as falhas, os limites do que sabemos e o que ainda precisamos entender.</em> Este ano, esse encontro acontece em Lima.</p>
+  </div>
+
+  <!-- facts -->
+  <div class="facts">
+    <div class="fact">
+      <p class="k">Data</p>
+      <p class="v">26–29 out 2026<small>Quatro dias</small></p>
+    </div>
+    <div class="fact">
+      <p class="k">Local</p>
+      <p class="v">Lima Conv. Center<small>Lima, Perú</small></p>
+    </div>
+    <div class="fact">
+      <p class="k">Frequência</p>
+      <p class="v">Bienal<small>Maior evento da disciplina</small></p>
+    </div>
+  </div>
+
+  <!-- body -->
+  <div class="sect">
+    <p class="eyebrow sect-eyebrow">Patrocinadora estratégica</p>
+    <h2 class="sect-title">A Intelltech estará presente no Slope Stability 2026.</h2>
+    <p class="sect-body">Apoiar o maior evento internacional de geotecnia aplicada é consequência direta de quem leva a sério o que defende. Estaremos em Lima para ouvir, apresentar e trocar com quem está construindo o futuro da disciplina.</p>
+  </div>
+
+  <!-- cta -->
+  <div class="cta">
+    <h2 class="cta-nos">Nos vemos lá.</h2>
+    <p class="cta-body">Se você também estará no Slope Stability 2026, queremos conversar. Responda este email ou acesse o link abaixo.</p>
+    <a href="https://materiais.intelltech.com/formulario-ss26" class="btn btn-amber">Acessar o formulário<span class="arr">↗</span></a>
+  </div>
+
+  <!-- footer -->
+  <div class="foot">
+    <img src="assets/intelltech-logo.png" alt="IntellTech">
+    <p>Você recebeu este email porque faz parte da comunidade do setor de mineração acompanhada pela Intelltech.</p>
+    <div class="links">
+      <a href="#">Site</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Cancelar inscrição</a>
+    </div>
+    <p class="copy">© 2026 Intelltech · Intelligent Technologies · Lima, Perú</p>
+  </div>
+
+</div>
+
+</body>
+</html>
